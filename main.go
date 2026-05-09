@@ -35,6 +35,7 @@ func main() {
 			fmt.Println("Total Expense")
 		} else if choice == 4 {
 			fmt.Println("Bye,Bye")
+			break
 		} else {
 			fmt.Println("invalid")
 		}
