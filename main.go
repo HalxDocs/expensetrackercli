@@ -34,14 +34,12 @@ func main() {
 
 			fmt.Print("Enter amount: ")
 			fmt.Scanln(&amount)
-
 			
 			expense := Expense{
 				Title:  title,
 				Amount: amount,
 			}
 
-			
 			expenses = append(expenses, expense)
 
 			fmt.Println("Expense added successfully!")
