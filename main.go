@@ -3,42 +3,85 @@ package main
 import "fmt"
 
 type Expense struct {
-
-	Title string
+	Title  string
 	Amount float64
 }
 
 func main() {
-	fmt.Println("Expense tracker")
-
+	// Slice to store expenses
 	expenses := []Expense{}
 
 	for {
-
-		fmt.Println("==== Expense Tracker ====")
-		fmt.Println("Add Expense")
-		fmt.Println("View Expense")
-		fmt.Println("Total Expense")
-		fmt.Println("Exit")
+		fmt.Println("\n==== Expense Tracker ====")
+		fmt.Println("1. Add Expense")
+		fmt.Println("2. View Expenses")
+		fmt.Println("3. Total Expenses")
+		fmt.Println("4. Exit")
 
 		var choice int
-		fmt.Print("Choose option:")
+
+		fmt.Print("Choose option: ")
 		fmt.Scanln(&choice)
 
-		fmt.Println(choice)
-
+		// Handle menu options
 		if choice == 1 {
-			fmt.Println("Add Expense")
-		} else if choice == 2 {
-			fmt.Println("View Expenses")
-		} else if choice == 3 {
-			fmt.Println("Total Expense")
-		} else if choice == 4 {
-			fmt.Println("Bye,Bye")
-			break
-		} else {
-			fmt.Println("invalid")
-		}
 
+			var title string
+			var amount float64
+
+			fmt.Print("Enter title: ")
+			fmt.Scanln(&title)
+
+			fmt.Print("Enter amount: ")
+			fmt.Scanln(&amount)
+
+			
+			expense := Expense{
+				Title:  title,
+				Amount: amount,
+			}
+
+			
+			expenses = append(expenses, expense)
+
+			fmt.Println("Expense added successfully!")
+
+		} else if choice == 2 {
+
+			if len(expenses) == 0 {
+				fmt.Println("No expenses found")
+				continue
+			}
+
+			fmt.Println("\n==== Expenses ====")
+
+			for i, expense := range expenses {
+				fmt.Printf("%d. %s - ₦%.2f\n",
+					i+1,
+					expense.Title,
+					expense.Amount,
+				)
+			}
+
+		} else if choice == 3 {
+
+			var total float64
+
+			for _, expense := range expenses {
+				total += expense.Amount
+			}
+
+			fmt.Printf("Total Expenses: ₦%.2f\n", total)
+
+		} else if choice == 4 {
+
+			fmt.Println("Goodbye!")
+			break
+
+		} else {
+
+			fmt.Println("Invalid choice")
+
+		}
 	}
 }
