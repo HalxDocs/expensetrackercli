@@ -29,7 +29,9 @@ func main() {
 
 		if choice == 1 {
 			fmt.Println("Add Expense")
-		} else if
+		} else if choice == 2 {
+			fmt.Println("View Expenses")
+		} else if choice == 3
 
 	}
 }
