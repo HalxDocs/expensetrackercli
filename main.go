@@ -28,17 +28,8 @@ func main() {
 		fmt.Println(choice)
 
 		if choice == 1 {
-	fmt.Println("Add Expense")
-} else if choice == 2 {
-	fmt.Println("View Expenses")
-} else if choice == 3 {
-	fmt.Println("Total Expenses")
-} else if choice == 4 {
-	fmt.Println("Goodbye!")
-	break
-} else {
-	fmt.Println("Invalid choice")
-}
+			fmt.Println("Add Expense")
+		} else if
 
 	}
 }
