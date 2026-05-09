@@ -31,7 +31,13 @@ func main() {
 			fmt.Println("Add Expense")
 		} else if choice == 2 {
 			fmt.Println("View Expenses")
-		} else if choice == 3
+		} else if choice == 3 {
+			fmt.Println("Total Expense")
+		} else if choice == 4 {
+			fmt.Println("Bye,Bye")
+		} else {
+			fmt.Println("invalid")
+		}
 
 	}
 }
